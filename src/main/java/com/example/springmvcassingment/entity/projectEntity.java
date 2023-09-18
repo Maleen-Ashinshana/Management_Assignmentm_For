@@ -24,5 +24,8 @@ public class projectEntity implements SuperEntity {
     String date;
     @Column(nullable = false)
     String owner ;
+    @ManyToOne
+    @JoinColumn(name = "techLead_Id",referencedColumnName = "id")
+    private TechLeadEntity techLeadEntity;
 
 }

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,6 +24,6 @@ public class TechLeadEntity {
     String group;
     @Column(nullable = false)
     double salary;
-
-
+    @OneToMany(mappedBy = "id",cascade = CascadeType.ALL)
+    private List<projectEntity> projectEntityList;
 }
